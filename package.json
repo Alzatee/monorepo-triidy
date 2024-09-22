@@ -11,7 +11,8 @@
     "build-dev": "ng build rick-and-morty-app --configuration=developmen",
     "build-qa": "ng build rick-and-morty-app --configuration=qa",
     "watch": "ng build rick-and-morty-app --watch --configuration development",
-    "test": "ng test rick-and-morty-app"
+    "test": "ng test rick-and-morty-app",
+    "deploy": "npm run build && gh-pages -d dist/rick-and-morty-app/browser"
   },
   "private": true,
   "dependencies": {

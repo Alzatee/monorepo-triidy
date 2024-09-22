@@ -1,4 +1,4 @@
 export const environment = {
     env: "production",
-    apiBaseUrl: '#{apiBaseUrl}#'
+    apiBaseUrl: 'https://rickandmortyapi.com'
 };

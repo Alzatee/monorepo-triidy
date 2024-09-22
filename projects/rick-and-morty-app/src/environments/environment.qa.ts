@@ -1,4 +1,4 @@
 export const environment = {
     env: "qa",
-    apiBaseUrl: '#{apiBaseUrl}#'
+    apiBaseUrl: 'https://rickandmortyapi.com'
 };
