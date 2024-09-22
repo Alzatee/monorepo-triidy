@@ -1,0 +1,33 @@
+<section class="container">
+    <h2 class="text-center mb-3 mt-3">{{ appTexts.FavoriteCharacters }}</h2>
+
+    <div class="d-flex justify-content-end">
+        <button mat-flat-button (click)="goBack()" class="mb-2 mt-2">{{ appTexts.NavigateBack }}</button>
+    </div>
+    <mat-divider class="mb-4"></mat-divider>
+
+    @if (favorites.length > 0) {
+        <div>
+            <div class="character-container">
+                <div class="row">
+                    @for (character of favorites; track character.id; let index = $index) {
+                        <div class="col-6 col-sm-4 col-md-3">
+                            <lib-character-card 
+                                [characterInput]="character" 
+                                [showAdditionalInfoInput]="false"
+                                [showFavoriteButtonInput]="false"
+                                [showDeleteButtonInput]="true"
+                                (onCharacterClick)="onCharacterClick($event)"
+                                (deleteFavoriteEvent)="removeFavorite($event)">
+                            </lib-character-card>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    } @else {
+        <div class="alert alert-info" role="alert">
+            {{ appTexts.NoFavoritesAdded }}
+        </div>
+    }
+  </section>

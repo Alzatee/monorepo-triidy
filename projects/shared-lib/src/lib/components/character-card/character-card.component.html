@@ -1,0 +1,23 @@
+<mat-card class="character-card" appearance="outlined" (click)="clickCharacter(character.id)">
+    <img mat-card-image [src]="character.image" alt="Imagen del personaje {{character.name}}">
+    <mat-card-content>
+        <mat-card-title class="pt-3 pb-1">{{ character.name }}</mat-card-title>
+        <p class="text-primary pb-3">{{ character.species }}</p>
+        
+        @if (showAdditionalInfo) {
+            <p class="pb-3">{{ character.gender }} - {{ character.status }}</p>
+        } 
+    </mat-card-content>
+    
+    @if (showFavoriteButton) {
+        <mat-card-actions class="actions-card" (click)="addFavorite($event)">
+            <mat-icon>favorite</mat-icon>
+        </mat-card-actions>
+    }
+
+    @if (showDeleteButton) {
+        <mat-card-actions class="actions-card" (click)="deleteFavorite($event, character)">
+            <mat-icon>delete</mat-icon>
+        </mat-card-actions>
+    }
+</mat-card>

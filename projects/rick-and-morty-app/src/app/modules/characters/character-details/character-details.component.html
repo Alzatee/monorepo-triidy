@@ -1,0 +1,90 @@
+<div id="wrapper">
+    <div id="container">
+        <section class="open-book">
+
+            <header>
+                <h1>Biografía</h1>
+                <div class="d-flex justify-content-end">
+                    <button mat-flat-button (click)="goBack()" class="mb-2 mt-2">{{ appTexts.NavigateBack }}</button>
+                </div>
+            </header>
+
+            <article>
+                <h2 class="chapter-title">{{ character?.name }}</h2>
+                <section class="container">
+                    <h2 class="text-center mb-3 mt-3">{{ appTexts.DetailCharacter }}</h2>
+                    <mat-divider class="mb-4"></mat-divider>
+
+                    @if (character) {
+                    <div class="row">
+                        <div class="col-12 col-sm-6 col-md-6">
+                            <lib-character-card [characterInput]="character" [showAdditionalInfoInput]="true"
+                                [showFavoriteButtonInput]="true" [showDeleteButtonInput]="false">
+                            </lib-character-card>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-6">
+                            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis facere voluptatem
+                                culpa totam distinctio. Laborum iste, sequi mollitia labore, illo quibusdam dolore
+                                accusamus fugit aut molestiae architecto, vero alias? Reiciendis.</span>
+                        </div>
+                    </div>
+                    }
+                </section>
+
+                <dl>
+                    <dt><strong>Fecha de creación</strong></dt>
+                    <dd>
+                        {{ character?.created | date: 'dd/MM/yyyy' }}
+                    </dd>
+                </dl>
+
+                <dl>
+                    <dt><strong>Origen</strong></dt>
+                    <dd>
+                        {{ character?.origin?.name }}
+                    </dd>
+                </dl>
+
+                <dl>
+                    <dt><strong>Locación</strong></dt>
+                    <dd>
+                        <em>Se encuenta en</em> <mark>{{ character?.location?.name }}</mark>
+                    </dd>
+                </dl>
+
+                <h2 class="text-center mb-3 mt-3">Capitulos en los que aparece</h2>
+                <mat-divider class="mb-4"></mat-divider>
+                <ul>
+                    @for (episode of character?.episode; track episode.id; let index = $index) {
+                    <li>{{episode.name}}</li>
+                    }
+                </ul>
+
+                <h2 class="text-center mb-3 mt-3">¿Por qué ver Rick y Morty?</h2>
+                <mat-divider class="mb-4"></mat-divider>
+                <span>
+                    Si eres fan los <mark class="blue">multiversos</mark>, estarás encantado con gran parte de esta
+                    serie, pues tiene un modo único de tratar el concepto de multiverso, pues está explícito a lo largo
+                    de la serie y le permite a los creadores hacer y deshacer cuanto gusten, sin la importancia de
+                    cuántas veces pueda morir una variante de <mark class="green">Rick</mark> o de <mark
+                        class="pink">Morty</mark>, y donde estos pueden interactuar sin mayor problema.
+                </span>
+                <span>
+                    Rick y Morty ha ganado terreno no sólo entre el público, sino que también entre la crítica de <mark
+                        class="orange">televisión</mark>. De tal modo que ha sido nominado en tres ocasiones a los
+                    Premios Emmy, y ha recibido dos galardones. En 2020, recibió la estatuilla gracias al capítulo 'The
+                    Vat of Acid Episode', que superó a programas como BoJack Horseman, Los Simpson o Big Mouth.
+                </span>
+                <li>"<s>Siempre</s> es buen <sup>momento para ir a ver Rick y Morty</sup>"</li>
+            </article>
+
+            <footer>
+                <ol id="page-numbers">
+                    <li>1</li>
+                    <li>2</li>
+                </ol>
+            </footer>
+
+        </section>
+    </div>
+</div>

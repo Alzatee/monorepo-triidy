@@ -1,0 +1,51 @@
+<section class="container">
+    <div class="row">
+        <div class="col-12 p-0">
+            <lib-seeker 
+                (searchTermChanged)="handleSearch($event)" 
+                (onClickFavoritesEvent)="goToFavorites()">
+            </lib-seeker>
+        </div>
+    </div>
+
+    <article class="row">
+        <div class="col-12">
+            @if (characters.length) {
+                <div class="character-container">
+                    <div class="row">
+                        @for (character of characters; track character.id; let index = $index) {
+                            <div class="col-6 col-sm-4 col-md-3">
+                                <lib-character-card 
+                                    [characterInput]="character" 
+                                    [showAdditionalInfoInput]="false"
+                                    [showFavoriteButtonInput]="true"
+                                    [showDeleteButtonInput]="false"
+                                    (onCharacterClick)="onCharacterClick($event)">
+                                </lib-character-card>
+                            </div>
+                        }
+                    </div>
+                </div>
+            } @else {
+                <div class="alert alert-primary" role="alert">
+                    {{ errorMessages.InformationNotFound }}
+                </div>
+            }
+        </div>
+    </article>
+    
+    @if (totalPages > 1 && showPaginator) {
+        <div class="row">
+            <div class="col-12 d-flex justify-content-center">
+                <lib-paginator
+                [currentPageInput]="currentPage"
+                [totalItemsInput]="totalItems"
+                [totalPagesInput]="totalPages"
+                [pageSizeOptionsInput]="[characters.length]"
+                [pageSizeInput]="maxPageSize"
+                (currentPageEmitter)="currentPageEmitter($event)" >
+            </lib-paginator>
+            </div>
+        </div>
+    }
+</section>

@@ -1,0 +1,10 @@
+<div class="background-img">
+    <div class="space"></div>
+    <div class="wrapper">
+        <div class="img-wrapper">
+            <span>{{ errorMessages.CodeError404 }}</span>
+        </div>
+        <p [innerHtml]="errorMessages.NotFoundPage"></p>
+        <button type="button" (click)="goToHome()">{{ appTexts.NavigateToHome }}</button>
+    </div>
+</div>

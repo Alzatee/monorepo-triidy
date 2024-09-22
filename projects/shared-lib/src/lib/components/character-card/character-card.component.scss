@@ -1,0 +1,32 @@
+.character-card {
+    cursor: pointer;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.character-card:hover {
+    background: #92929246;
+    border-bottom: 2px solid #2979ff;
+}
+
+.mat-mdc-card-actions {
+    padding: 0 16px;
+}
+
+.actions-card {
+    margin: 5px;
+    width: 37px;
+    max-height: 37px;
+    min-height: 37px;
+    padding: 7px;
+    position: absolute;
+    z-index: 300;
+    right: 0;
+    background: rgba(34, 34, 34, 0.6117647059);
+    color: #f3f3f3;
+    border-radius: 200px;
+}
+
+.actions-card:hover {
+    background: #222222d7;
+}
