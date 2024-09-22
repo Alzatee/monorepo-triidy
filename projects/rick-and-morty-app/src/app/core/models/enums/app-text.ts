@@ -3,5 +3,9 @@ export enum AppTexts {
     NavigateBack = 'REGRESAR',
     FavoriteCharacters = 'Personajes Favoritos',
     NoFavoritesAdded = '¡Aún no haz agregado personajes favoritos!',
-    DetailCharacter = 'Detalles del personaje'
+    DetailCharacter = 'Detalles del personaje',
+    CreationDate = 'Fecha de creación',
+    Origin = 'Origen',
+    Location = 'Locación',
+    Biography = 'Biografía'
 }

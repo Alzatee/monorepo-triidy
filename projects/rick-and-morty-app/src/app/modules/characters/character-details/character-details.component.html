@@ -2,11 +2,9 @@
     <div id="container">
         <section class="open-book">
 
-            <header>
-                <h1>Biografía</h1>
-                <div class="d-flex justify-content-end">
-                    <button mat-flat-button (click)="goBack()" class="mb-2 mt-2">{{ appTexts.NavigateBack }}</button>
-                </div>
+            <header class="d-flex d-flex justify-content-between">
+                <h1 class="mb-4 mt-4">{{ appTexts.Biography }}</h1>
+                <button mat-flat-button (click)="goBack()" class="mb-2 mt-2">{{ appTexts.NavigateBack }}</button>
             </header>
 
             <article>
@@ -32,21 +30,21 @@
                 </section>
 
                 <dl>
-                    <dt><strong>Fecha de creación</strong></dt>
+                    <dt><strong>{{ appTexts.CreationDate }}</strong></dt>
                     <dd>
                         {{ character?.created | date: 'dd/MM/yyyy' }}
                     </dd>
                 </dl>
 
                 <dl>
-                    <dt><strong>Origen</strong></dt>
+                    <dt><strong>{{ appTexts.Origin }}</strong></dt>
                     <dd>
                         {{ character?.origin?.name }}
                     </dd>
                 </dl>
 
                 <dl>
-                    <dt><strong>Locación</strong></dt>
+                    <dt><strong>{{ appTexts.Location }}</strong></dt>
                     <dd>
                         <em>Se encuenta en</em> <mark>{{ character?.location?.name }}</mark>
                     </dd>

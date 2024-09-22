@@ -1,14 +1,12 @@
-<div class="paginator-container">
-    <mat-paginator 
-        (page)="changePage($event)" 
-        [length]="totalItems"
-        [pageSizeOptions]="pageSizeOptions"
-        [pageSize]="pageSize"
-        hidePageSize
-        showFirstLastButtons>
-    </mat-paginator>
+<mat-paginator 
+    (page)="changePage($event)" 
+    [length]="totalItems"
+    [pageSizeOptions]="pageSizeOptions"
+    [pageSize]="pageSize"
+    hidePageSize
+    showFirstLastButtons>
+</mat-paginator>
     
-    <div class="paginator-info text-center">
-        Página {{ currentPage }} de {{ totalPages }}
-    </div>
+<div class="paginator-info text-center text-secondary">
+    Página {{ currentPage }} de {{ totalPages }}
 </div>
