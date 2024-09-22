@@ -25,6 +25,7 @@ export class CharacterDetailsComponent implements OnInit {
   ){ }
 
   ngOnInit(): void {
+    window.scrollTo(0, 0);
     this.characterId = Number(this.route.snapshot.paramMap.get('characterId'));
     this.loadCharacter(this.characterId);
   }
