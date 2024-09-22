@@ -1,6 +1,7 @@
 {
   "name": "triidy-monorepo",
   "version": "0.0.0",
+  "homepage": "https://alzatee.github.io/monorepo-triidy",
   "scripts": {
     "ng": "ng",
     "start": "ng serve rick-and-morty-app",
@@ -25,6 +26,7 @@
     "@angular/platform-browser-dynamic": "^18.1.0",
     "@angular/router": "^18.1.0",
     "bootstrap": "^5.3.3",
+    "gh-pages": "^6.1.1",
     "rxjs": "~7.8.0",
     "sweetalert2": "^11.14.0",
     "tslib": "^2.3.0",
