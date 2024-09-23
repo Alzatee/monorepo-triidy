@@ -8,7 +8,7 @@ import { MatDividerModule } from '@angular/material/divider';
 
 const MATERIAL_MODULES = [
   MatButtonModule, 
-  MatDividerModule,
+  MatDividerModule
 ];
 
 const COMMON_MODULES = [

@@ -1,15 +1,17 @@
-<form class="form">
-  <mat-form-field class="full-width">
-    <mat-label>Buscar...</mat-label>
-    <input type="text" matInput placeholder="Buscar por el nombre del personaje" (keyup)="onSearch($event)">
+<section class="d-flex">
+  <form class="form">
+    <mat-form-field class="full-width">
+      <mat-label>Buscar...</mat-label>
+      <input type="text" matInput placeholder="Buscar por el nombre del personaje" (keyup)="onSearch($event)">
+  
+      <div matSuffix class="d-flex align-items-center">
+        <mat-icon class="px-5">search</mat-icon>
+      </div>
+    </mat-form-field>
+  </form>
 
-    <div matSuffix class="d-flex align-items-center">
-      <mat-icon class="px-5">search</mat-icon>
-
-      <button mat-fab extended (click)="onClickFavorites()">
-        <mat-icon>favorite</mat-icon>
-        Favoritos
-      </button>
-    </div>
-  </mat-form-field>
-</form>
+  <button mat-fab extended (click)="onClickFavorites()">
+    <mat-icon>favorite</mat-icon>
+    Favoritos
+  </button>
+</section>

@@ -7,5 +7,6 @@ export enum AppTexts {
     CreationDate = 'Fecha de creación',
     Origin = 'Origen',
     Location = 'Locación',
-    Biography = 'Biografía'
+    Biography = 'Biografía',
+    Detailt = "Detalle"
 }

@@ -1,0 +1,17 @@
+h2{
+    color:rgba(255,255,255,.2);
+    background-image:url('/images/bg-text-animation.png');
+    background-size:cover;
+    background-clip: text;
+    -webkit-background-clip: text;
+    animation:animate 14s linear infinite;
+}
+  
+@keyframes animate {
+    0%{
+        background-position: left 0px top 0x;
+    }
+     40%{
+        background-position: left 900px top 0px;
+    }
+ }

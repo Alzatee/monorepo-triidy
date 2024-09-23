@@ -4,11 +4,13 @@ import { CharacterListComponent } from './character-list/character-list.componen
 import { CharacterDetailsComponent } from './character-details/character-details.component';
 import { SharedModule } from '@shared/shared.module';
 import { FavoriteCharactersComponent } from './favorite-characters/favorite-characters.component';
+import { CharacterDetailsHeaderComponent } from './character-details/character-details-header/character-details-header.component';
 
 @NgModule({
   declarations: [
     CharacterListComponent,
     CharacterDetailsComponent,
+    CharacterDetailsHeaderComponent,
     FavoriteCharactersComponent
   ],
   imports: [
