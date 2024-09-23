@@ -6,6 +6,7 @@ import { ErrorMessages } from '@core/models/enums/error-messages';
 import { QueryResponseCharacter } from '@core/models/interfaces/query-response-character';
 import { RickAndMortyService } from '@core/services/rick-and-morty.service';
 import { navigateToStart, openErrorModal } from '@shared/shared-functions';
+import { timer } from 'rxjs';
 
 @Component({
   selector: 'triidy-character-details',
@@ -25,7 +26,7 @@ export class CharacterDetailsComponent implements OnInit {
   ){ }
 
   ngOnInit(): void {
-    window.scrollTo(0, 0);
+    timer(300).subscribe(() => { window.scrollTo(0, 0); }); 
     this.characterId = Number(this.route.snapshot.paramMap.get('characterId'));
     this.loadCharacter(this.characterId);
   }
@@ -33,6 +34,7 @@ export class CharacterDetailsComponent implements OnInit {
   loadCharacter(characterId: number): void {
     this.rickAndMortyService.getCharacterByQuery(characterId).subscribe({
       next: (response: QueryResponseCharacter) => {
+        response.data.character.id = Number(response.data.character.id);
         this.character = response.data.character;
       },
       error: (error) => {

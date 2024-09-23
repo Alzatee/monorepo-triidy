@@ -18,16 +18,16 @@ export function createCharacterQuery(characterId: number): string {
     return `
       query {
         character(id: ${characterId}) {
-            id,
-            name,
-            image,
+          id,
+          name,
+          image,
     	    gender,
     	    species,
     	    status,
     	    created,
     	    episode { id, name },
-    		location { id, name },
-    		origin { id, name }
+    		  location { id, name },
+    		  origin { id, name }
         }
       }
     `;

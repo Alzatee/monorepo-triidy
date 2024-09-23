@@ -30,3 +30,19 @@
 .actions-card:hover {
     background: #222222d7;
 }
+
+.icon-fav {
+    background: rgba(255, 255, 255, 0.89);
+    color: #2979ff;
+}
+.icon-fav:hover {
+    background: rgba(230, 230, 230, 0.781);
+}
+
+.icon-not-fav {
+    background: rgba(34, 34, 34, 0.6117647059);
+    color: #f3f3f3;
+}
+.icon-not-fav:hover {
+    background: #222222d7;
+}

@@ -10,14 +10,17 @@
     </mat-card-content>
     
     @if (showFavoriteButton) {
-        <mat-card-actions class="actions-card" (click)="addFavorite($event)">
-            <mat-icon>favorite</mat-icon>
+        <mat-card-actions class="actions-card" [ngClass]="{'icon-fav': isFavorite, 'icon-not-fav': !isFavorite}" (click)="addFavorite($event)">
+            <mat-icon 
+                [title]="isFavorite ? 'Eliminar favorito' : 'Agregar a favoritos'">
+                favorite
+            </mat-icon>
         </mat-card-actions>
     }
 
     @if (showDeleteButton) {
         <mat-card-actions class="actions-card" (click)="deleteFavorite($event, character)">
-            <mat-icon>delete</mat-icon>
+            <mat-icon title="Eliminar favorito">delete</mat-icon>
         </mat-card-actions>
     }
 </mat-card>
